@@ -1,46 +1,42 @@
-<template>
-  <v-app light>
-    <v-toolbar dark color="primary">
-        <v-toolbar-side-icon></v-toolbar-side-icon>
-        <v-toolbar-title class="white--text">Title</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn icon>
-        <v-icon>search</v-icon>
-        </v-btn>
-        <v-btn icon>
-          <v-icon>more_vert</v-icon>
-        </v-btn>
-      </v-toolbar>
-
-    <v-navigation-drawer class="pink lighten-2" app absolute light overflow v-model="drawer">
-      <v-list>
-        <v-list-tile-avatar>
-          <img src="https://randomuser.me/api/portraits/men/85.jpg"/>
-        </v-list-tile-avatar>
-      </v-list>  
-    </v-navigation-drawer>
-    
-    
-    <v-content>
-      <v-container fluid>
-        <v-btn color = "primary"> 
-          Hello
-        </v-btn>
-      </v-container>
-    </v-content>
-
-    <v-footer :fixed="true" app>
-      <span>&copy; H2O</span>
-    </v-footer>
-  </v-app>
+<template lang="pug">
+v-app
+  v-navigation-drawer(fixed,v-model='drawer',light,app)
+    .pa-3.text-xs-center(v-show="!mini")
+      div.display-2.py-4 Learn
+      v-list-tile-avatar
+        img(src = "https://randomuser.me/api/portraits/men/85.jpg")
+  v-toolbar(fixed,dark,app,color="blue",:class="theme")
+    v-toolbar-side-icon(dark, @click.native.stop='drawer = !drawer')
+    v-toolbar-title {{title}}
+  v-content
+    v-container(fluid)
+      v-slide-y-transition(mode='out-in')
+        router-view
+  v-fab-transition
+    v-btn(
+      fab
+      dark
+      fixed
+      bottom
+      right
+      color="red"
+    )
+      v-icon keyboard_arrow_up
+  v-footer(app)
+    p.text-lg-center Made with ❤ by Leo Hu @2017
 </template>
 
 <script>
   export default {
     data () {
       return {
-        title: 'Vuetify.js'
+        title: 'Learning',
+        dark: false,
+        theme: 'primary',
+        mini: false,
+        drawer: false
       }
     }
   }
 </script>
+
