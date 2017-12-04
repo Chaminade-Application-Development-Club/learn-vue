@@ -9,6 +9,8 @@ import 'vuetify/dist/vuetify.css'
 import App from './App'
 import router from './router'
 
+import PlusMinus from './components/PlusMinus.vue'
+
 Vue.use(Vuetify, Vuex, { theme: {
   primary: '#ee44aa',
   secondary: '#424242',
@@ -21,6 +23,7 @@ Vue.use(Vuetify, Vuex, { theme: {
 
 Vue.config.productionTip = false
 
+Vue.component('v-pm', PlusMinus)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
