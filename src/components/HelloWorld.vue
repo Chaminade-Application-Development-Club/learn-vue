@@ -5,6 +5,7 @@
         v-pm(title="Total Cones")
       v-flex.xs6
         v-pm(title="Avg. Cones MBG")
+      v-slider
     v-layout(row,wrap)
       v-flex.xs12
         div(id='qr')

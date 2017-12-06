@@ -11,6 +11,7 @@
         v-flex.xs4.text-xs-center
             v-btn(icon,flat,color="indigo",@click.native="number++")
                 v-icon add
+        
 
 </template>
 

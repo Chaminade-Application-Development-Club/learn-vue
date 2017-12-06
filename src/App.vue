@@ -23,7 +23,10 @@ v-app
     )
       v-icon keyboard_arrow_up
   v-footer(app)
-    p.text-lg-center Made with ❤ by Leo Hu @2017
+    v-container.pa-0(fluid)
+      v-layout(row,wrap)
+          v-flex.xs12
+            p.text-xs-center Made with ❤ by Leo Hu @2017
 </template>
 
 <script>
