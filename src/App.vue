@@ -2,7 +2,7 @@
 v-app
   v-navigation-drawer(fixed,v-model='drawer',light,app)
     .pa-3.text-xs-center(v-show="!mini")
-      div.display-2.py-4 Learn
+      div.display-2.py-4 Scout
       v-list-tile-avatar
         img(src = "https://randomuser.me/api/portraits/men/85.jpg")
   v-toolbar(fixed,dark,app,color="blue",:class="theme")
@@ -33,7 +33,7 @@ v-app
   export default {
     data () {
       return {
-        title: 'Learning',
+        title: 'Eagles',
         dark: false,
         theme: 'primary',
         mini: false,
