@@ -3,8 +3,8 @@ v-app
   v-navigation-drawer(fixed,v-model='drawer',light,app)
     .pa-3.text-xs-center(v-show="!mini")
       div.display-2.py-4 Scout
-      v-list-tile-avatar
-        img(src = "https://randomuser.me/api/portraits/men/85.jpg")
+      v-avatar(size="100px")
+        img(src = "/static/best.jpg")
   v-toolbar(fixed,dark,app,color="blue",:class="theme")
     v-toolbar-side-icon(dark, @click.native.stop='drawer = !drawer')
     v-toolbar-title {{title}}
