@@ -10,6 +10,7 @@ import App from './App'
 import router from './router'
 
 import PlusMinus from './components/PlusMinus.vue'
+import DayPicker from '@/components/DayPicker.vue'
 
 Vue.use(Vuetify, Vuex, { theme: {
   primary: '#ee44aa',
@@ -24,6 +25,7 @@ Vue.use(Vuetify, Vuex, { theme: {
 Vue.config.productionTip = false
 
 Vue.component('v-pm', PlusMinus)
+Vue.component('v-dp', DayPicker)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
