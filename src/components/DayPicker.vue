@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import Date
 export default {
   name: 'DayPicker',
   data () {
