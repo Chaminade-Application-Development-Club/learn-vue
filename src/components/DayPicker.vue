@@ -12,8 +12,8 @@
                 min-width="290px")
 
                 v-text-field(slot="activator",
-                    label="Picker in menu",
-                    v-model="date",
+                    label="Date",
+                    v-model="today",
                     prepend-icon="event",
                     readonly)
                 v-date-picker(v-model="date",no-title,scrollable actions)
@@ -25,12 +25,25 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   name: 'DayPicker',
   data () {
     return {
       date: null,
       menu: false
+    }
+  },
+  created () {
+  },
+  mounted () {
+    this.date = moment().format('YYYY-MM-DD')
+  },
+  methods: {
+  },
+  computed: {
+    today: function () {
+      return (this.date + ' ' + moment().format('HH:mm:ss'))
     }
   }
 }
