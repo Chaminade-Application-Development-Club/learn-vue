@@ -49,10 +49,10 @@ export default {
       console.log(this.email)
       console.log(this.password)
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-        function (user) {
-          alert('Your accout has been created')
+        (user) => {
+          this.$router.push('scout')
         },
-        function (err) {
+        (err) => {
           alert(err.message)
         }
       )

@@ -44,13 +44,11 @@ export default {
     onResize () {
     },
     login: function () {
-      console.log(this.email)
-      console.log(this.password)
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-        function (user) {
-          alert('Logged in')
+        (user) => {
+          this.$router.push('scout')
         },
-        function (err) {
+        (err) => {
           alert(err.message)
         }
       )

@@ -35,6 +35,8 @@ v-container(fluid, v-resize="onResize")
       }
     },
     methods: {
+      onResize () {
+      },
       moveTo: function (step, address) {
         this.$router.push(address)
         this.step = step

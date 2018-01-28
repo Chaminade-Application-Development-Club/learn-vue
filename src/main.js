@@ -35,6 +35,7 @@ Vue.component('v-auton', Auton)
 Vue.component('v-teleop', Teleop)
 
 /* eslint-disable no-new */
+let app
 var config = {
   apiKey: 'AIzaSyBuuleWypq5upzNoQvm5op89qtebU6L3Jw',
   authDomain: 'scout-2018.firebaseapp.com',
@@ -44,10 +45,13 @@ var config = {
   messagingSenderId: '268321242104'
 }
 firebase.initializeApp(config)
-
-new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+firebase.auth().onAuthStateChanged(function (user) {
+  if (!app) {
+    new Vue({
+      el: '#app',
+      router,
+      template: '<App/>',
+      components: { App }
+    })
+  }
 })

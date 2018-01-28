@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     today: function () {
-      return (this.date + ' ' + moment().format('HH:mm:ss'))
+      return (this.date + ' ' + moment().format('HH:mm'))
     }
   }
 }

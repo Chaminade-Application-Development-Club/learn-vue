@@ -32,6 +32,7 @@ let router = new Router({
       name: 'scout',
       component: Scout,
       meta: {
+        title: 'Eagle Engineering',
         requiresAuth: true
       }
     }
@@ -41,11 +42,16 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   let currentUser = firebase.auth().currentUser
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
   if (requiresAuth && !currentUser) {
     next('login')
   } else if (!requiresAuth && currentUser) {
-    next('newmatch')
-  } else next()
+    next('scout')
+  } else {
+    next()
+  }
 })
 
 export default router
