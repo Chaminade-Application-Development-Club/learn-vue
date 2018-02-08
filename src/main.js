@@ -16,6 +16,7 @@ import Teleop from '@/components/Teleop.vue'
 import NewMatch from '@/components/NewMatch.vue'
 import PlusMinus from '@/components/PlusMinus.vue'
 import DayPicker from '@/components/DayPicker.vue'
+import Fab from '@/components/Fab.vue'
 
 Vue.use(Vuetify, Vuex, VueMoment, VueFire, { theme: {
   primary: '#ee44aa',
@@ -33,6 +34,7 @@ Vue.component('v-dp', DayPicker)
 Vue.component('v-newmatch', NewMatch)
 Vue.component('v-auton', Auton)
 Vue.component('v-teleop', Teleop)
+Vue.component('v-tfab', Fab)
 
 /* eslint-disable no-new */
 let app

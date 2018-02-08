@@ -16,17 +16,9 @@ v-app
     v-container(fluid)
       v-slide-y-transition(mode='out-in')
         router-view
+  
+  v-tfab
 
-  v-fab-transition
-    v-btn(
-      fab
-      dark
-      fixed
-      bottom
-      right
-      color="red"
-    )
-      v-icon keyboard_arrow_up
   v-footer(app)
     v-container.pa-0(fluid)
       v-layout(row,wrap)
