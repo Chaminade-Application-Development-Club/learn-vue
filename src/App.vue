@@ -14,10 +14,10 @@ v-app
 
   v-content
     v-container(fluid)
-      v-slide-y-transition(mode='out-in')
-        router-view
-  
-  v-tfab
+      v-layout(align-center,justify-center)
+        v-flex.xs12.sm10.md8.lg6.xl4
+          v-slide-y-transition(mode='out-in')
+            router-view
 
   v-footer(app)
     v-container.pa-0(fluid)
